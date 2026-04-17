@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StichedLove Co — Premium Vietnamese Roasted Coffee</title>
+  <meta name="description" content="StichedLove Co, operated by E-TBGlobal Trading and Services Joint Stock Company, is a premium Vietnamese roasted coffee company bringing authentic heritage, craftsmanship, and flavor to the world." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          },
+          colors: {
+            ink: '#0a0a0a',
+            paper: '#fafaf9',
+            stone: {
+              150: '#ececea',
+            },
+          },
+          letterSpacing: {
+            'widest-xl': '0.25em',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: #0a0a0a; background: #fafaf9; -webkit-font-smoothing: antialiased; }
+    .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+
+    /* Hero image treatment — keep color, soften slightly for legibility */
+    .hero-img {
+      filter: contrast(1.02) brightness(0.78) saturate(0.95);
+    }
+    /* Editorial color images with a subtle refined tone */
+    .mono-img { filter: contrast(1.03) saturate(0.98); }
+
+    /* Modal transitions */
+    .modal-backdrop { transition: opacity 0.35s ease; }
+    .modal-panel { transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .modal-hidden { opacity: 0; pointer-events: none; }
+    .modal-hidden .modal-panel { opacity: 0; transform: translateY(16px) scale(0.98); }
+
+    /* Form field focus */
+    .form-field:focus { outline: none; border-color: #0a0a0a; }
+    .form-field { transition: border-color 0.25s ease; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* Hairline */
+    .hairline { height: 1px; background: #0a0a0a; }
+
+    /* Nav link underline */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -4px;
+      width: 0; height: 1px;
+      background: currentColor;
+      transition: width 0.35s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Product card hover */
+    .product-card img { transition: transform 0.9s ease; }
+    .product-card:hover img { transform: scale(1.04); }
+  </style>
+</head>
+
+<body class="bg-paper text-ink antialiased">
+
+  <!-- ============ HEADER ============ -->
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-paper/70 border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2">
+        <span class="font-serif text-xl md:text-2xl tracking-tight">StichedLove</span>
+        <span class="text-[10px] uppercase tracking-widest-xl text-neutral-500 mt-1">Co</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-10 text-sm text-neutral-700">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#vision" class="nav-link">Vision</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#distributor" class="nav-link">Distributor</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <button type="button" data-open-contact class="group inline-flex items-center gap-2 rounded-full bg-ink text-paper px-5 py-2.5 text-xs uppercase tracking-widest hover:bg-neutral-800 transition">
+        Contact Us
+        <span class="transition-transform group-hover:translate-x-0.5">→</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="top" class="relative min-h-screen flex items-end overflow-hidden">
+    <!-- IMAGE: cinematic monochrome coffee hero — replace src with real brand image -->
+    <img
+      src="assets/hero-coffee.jpg"
+      alt="Pouring freshly brewed Vietnamese coffee"
+      class="absolute inset-0 w-full h-full object-cover hero-img"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/70"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10 pb-20 md:pb-28 pt-40 text-paper">
+      <p class="reveal text-[11px] uppercase tracking-widest-xl text-white/70 mb-6">
+        Premium Vietnamese Roasted Coffee
+      </p>
+      <h1 class="reveal font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.02] tracking-tight max-w-5xl">
+        The soul of Vietnamese<br class="hidden sm:block" /> coffee, carefully roasted.
+      </h1>
+      <p class="reveal mt-8 max-w-xl text-base md:text-lg text-white/80 leading-relaxed">
+        StichedLove Co crafts roasted coffee rooted in the heritage of Vietnam — where every bean
+        carries flavor, culture, and the quiet discipline of craftsmanship.
+      </p>
+      <div class="reveal mt-10 flex flex-wrap items-center gap-4">
+        <button type="button" data-open-contact class="inline-flex items-center gap-3 rounded-full bg-paper text-ink px-7 py-4 text-xs uppercase tracking-widest hover:bg-white transition">
+          Contact Us
+          <span>→</span>
+        </button>
+        <a href="#about" class="inline-flex items-center gap-3 text-xs uppercase tracking-widest text-white/80 hover:text-white transition">
+          Discover the House
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero meta row -->
+    <div class="absolute bottom-6 right-6 md:right-10 z-10 text-[10px] uppercase tracking-widest-xl text-white/60">
+      Hanoi · Vietnam
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="py-24 md:py-36">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+      <div class="grid grid-cols-12 gap-8 md:gap-16 items-start">
+        <div class="col-span-12 md:col-span-5">
+          <p class="reveal text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-6">01 — About Us</p>
+          <h2 class="reveal font-serif text-4xl md:text-5xl leading-[1.08] tracking-tight">
+            A quiet house of<br /> Vietnamese coffee.
+          </h2>
+          <div class="reveal hairline w-12 mt-8 bg-ink/80"></div>
+        </div>
+
+        <div class="col-span-12 md:col-span-7 space-y-6 text-neutral-700 text-[17px] leading-[1.8]">
+          <p class="reveal">
+            StichedLove Co is the consumer face of <span class="text-ink font-medium">E-TBGlobal Trading and Services Joint Stock Company</span>,
+            a Vietnamese enterprise devoted to the craft of premium roasted coffee.
+          </p>
+          <p class="reveal">
+            We believe every coffee bean carries more than flavor — it carries the essence of Vietnamese culture, the
+            passion of its growers, and the patience of a centuries-old ritual. Our role is to honor that inheritance and
+            bring it, unfiltered, to the cups of consumers around the world.
+          </p>
+          <p class="reveal">
+            From origin to roast, each batch is curated with the quiet precision of a house that understands coffee as
+            heritage — refined, authentic, and made to travel well.
+          </p>
+
+          <div class="reveal grid grid-cols-2 gap-6 pt-8 border-t border-black/10 mt-10">
+            <div>
+              <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-2">Origin</p>
+              <p class="font-serif text-xl">Vietnam</p>
+            </div>
+            <div>
+              <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-2">Discipline</p>
+              <p class="font-serif text-xl">Roasted Coffee</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editorial image strip -->
+      <div class="reveal mt-20 md:mt-28 grid grid-cols-12 gap-4 md:gap-6">
+        <!-- IMAGE: coffee beans detail -->
+        <div class="col-span-12 md:col-span-7 aspect-[16/10] overflow-hidden">
+          <img src="assets/about-beans.jpg"
+               alt="Freshly roasted coffee beans" class="w-full h-full object-cover mono-img" />
+        </div>
+        <!-- IMAGE: barista / craft detail -->
+        <div class="col-span-12 md:col-span-5 aspect-[16/10] overflow-hidden">
+          <img src="assets/about-craft.jpg"
+               alt="Coffee preparation detail" class="w-full h-full object-cover mono-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISION · MISSION · VALUES ============ -->
+  <section id="vision" class="py-24 md:py-36 bg-white border-y border-black/10">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-24">
+        <div>
+          <p class="reveal text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-6">02 — Our Direction</p>
+          <h2 class="reveal font-serif text-4xl md:text-5xl leading-[1.08] tracking-tight max-w-2xl">
+            A compass built from<br /> heritage and intent.
+          </h2>
+        </div>
+        <p class="reveal max-w-sm text-neutral-600 leading-relaxed">
+          Three quiet commitments shape how we roast, partner, and grow — each rooted in the long memory of Vietnamese coffee.
+        </p>
+      </div>
+
+      <!-- Vision / Mission (editorial 2-col) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-black/10">
+        <div class="reveal p-8 md:p-12 border-b md:border-b-0 md:border-r border-black/10">
+          <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-6">Vision</p>
+          <p class="font-serif text-2xl md:text-3xl leading-[1.25] tracking-tight">
+            To stand among Vietnam's most trusted premium coffee houses — carrying Vietnamese coffee culture with
+            quiet authority into Southeast Asia, the US, the UK, and Europe.
+          </p>
+        </div>
+        <div class="reveal p-8 md:p-12">
+          <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-6">Mission</p>
+          <ul class="space-y-5 text-neutral-800 text-[17px] leading-[1.7]">
+            <li class="flex gap-4">
+              <span class="font-serif text-neutral-400 mt-0.5">—</span>
+              Deliver authentic, flavorful Vietnamese coffee to discerning consumers worldwide.
+            </li>
+            <li class="flex gap-4">
+              <span class="font-serif text-neutral-400 mt-0.5">—</span>
+              Preserve the craft and traditions behind Vietnamese coffee roasting.
+            </li>
+            <li class="flex gap-4">
+              <span class="font-serif text-neutral-400 mt-0.5">—</span>
+              Champion sustainable farming and fair partnerships with the growers who shape our origin.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Core values strip -->
+      <div class="mt-24">
+        <p class="reveal text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-10 text-center">Core Values</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 border-t border-black/10">
+          <div class="reveal group p-8 md:p-10 border-r border-b md:border-b-0 border-black/10 hover:bg-neutral-50 transition">
+            <p class="text-xs text-neutral-400 mb-4">01</p>
+            <p class="font-serif text-2xl md:text-3xl tracking-tight">Quality</p>
+          </div>
+          <div class="reveal group p-8 md:p-10 md:border-r border-b md:border-b-0 border-black/10 hover:bg-neutral-50 transition">
+            <p class="text-xs text-neutral-400 mb-4">02</p>
+            <p class="font-serif text-2xl md:text-3xl tracking-tight">Authenticity</p>
+          </div>
+          <div class="reveal group p-8 md:p-10 border-r border-black/10 hover:bg-neutral-50 transition">
+            <p class="text-xs text-neutral-400 mb-4">03</p>
+            <p class="font-serif text-2xl md:text-3xl tracking-tight">Craftsmanship</p>
+          </div>
+          <div class="reveal group p-8 md:p-10 hover:bg-neutral-50 transition">
+            <p class="text-xs text-neutral-400 mb-4">04</p>
+            <p class="font-serif text-2xl md:text-3xl tracking-tight">Sustainability</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT LINES ============ -->
+  <section id="products" class="py-24 md:py-36">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div>
+          <p class="reveal text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-6">03 — The Collection</p>
+          <h2 class="reveal font-serif text-4xl md:text-5xl leading-[1.08] tracking-tight max-w-2xl">
+            Three expressions,<br /> one origin.
+          </h2>
+        </div>
+        <p class="reveal max-w-sm text-neutral-600 leading-relaxed">
+          A tightly edited catalogue — each line selected and roasted to reveal a distinct character of Vietnamese coffee.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <!-- Arabica -->
+        <article class="reveal product-card group">
+          <div class="aspect-[4/5] overflow-hidden bg-neutral-100">
+            <!-- IMAGE: Arabica product visual -->
+            <img src="assets/Arabica%20G1.png"
+                 alt="Arabica Coffee Grade 1" class="w-full h-full object-cover mono-img" />
+          </div>
+          <div class="pt-6">
+            <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-3">Grade 1 · Highland</p>
+            <h3 class="font-serif text-2xl md:text-3xl tracking-tight mb-3">Arabica Coffee</h3>
+            <p class="text-neutral-600 leading-relaxed mb-6">
+              An elegant cup — floral aromatics, soft acidity, and a refined, lingering finish. Our Arabica is roasted
+              to highlight clarity over intensity.
+            </p>
+            <button type="button" data-open-contact data-product="Arabica Coffee Grade 1" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b border-ink pb-1 hover:gap-3 transition-all">
+              Inquire →
+            </button>
+          </div>
+        </article>
+
+        <!-- Robusta -->
+        <article class="reveal product-card group">
+          <div class="aspect-[4/5] overflow-hidden bg-neutral-100">
+            <!-- IMAGE: Robusta product visual -->
+            <img src="assets/Robusta%20G1.png"
+                 alt="Robusta Coffee Grade 1" class="w-full h-full object-cover mono-img" />
+          </div>
+          <div class="pt-6">
+            <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-3">Grade 1 · Signature Strength</p>
+            <h3 class="font-serif text-2xl md:text-3xl tracking-tight mb-3">Robusta Coffee</h3>
+            <p class="text-neutral-600 leading-relaxed mb-6">
+              Bold, deep, and unmistakably Vietnamese. A full-bodied roast with high caffeine and a cocoa-forward
+              backbone — the heart of our house.
+            </p>
+            <button type="button" data-open-contact data-product="Robusta Coffee Grade 1" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b border-ink pb-1 hover:gap-3 transition-all">
+              Inquire →
+            </button>
+          </div>
+        </article>
+
+        <!-- Premium Blend -->
+        <article class="reveal product-card group">
+          <div class="aspect-[4/5] overflow-hidden bg-neutral-100">
+            <!-- IMAGE: Premium Blend product visual -->
+            <img src="assets/Premium%20Blend.png"
+                 alt="Premium Blend Coffee" class="w-full h-full object-cover mono-img" />
+          </div>
+          <div class="pt-6">
+            <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-3">House Blend · Arabica × Robusta</p>
+            <h3 class="font-serif text-2xl md:text-3xl tracking-tight mb-3">Premium Blend</h3>
+            <p class="text-neutral-600 leading-relaxed mb-6">
+              A considered balance of Arabica refinement and Robusta depth — smooth, structured, and crafted for those
+              who favor equilibrium in every cup.
+            </p>
+            <button type="button" data-open-contact data-product="Premium Blend Coffee" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b border-ink pb-1 hover:gap-3 transition-all">
+              Inquire →
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="py-24 md:py-36 bg-white border-t border-black/10">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+      <div class="grid grid-cols-12 gap-8 md:gap-16 items-start">
+        <div class="col-span-12 md:col-span-6">
+          <p class="reveal text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-6">04 — Contact</p>
+          <h2 class="reveal font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight mb-8">
+            A conversation over coffee.
+          </h2>
+          <p class="reveal text-neutral-600 text-lg leading-relaxed max-w-md mb-10">
+            For partnerships, wholesale, or general inquiries — we welcome correspondence from
+            distributors, buyers, and curious partners across the world.
+          </p>
+          <button type="button" data-open-contact class="reveal inline-flex items-center gap-3 rounded-full bg-ink text-paper px-7 py-4 text-xs uppercase tracking-widest hover:bg-neutral-800 transition">
+            Contact Us
+            <span>→</span>
+          </button>
+        </div>
+
+        <div class="col-span-12 md:col-span-6 md:pl-10 md:border-l border-black/10">
+          <div class="reveal">
+            <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-3">Legal Entity</p>
+            <p class="font-serif text-xl md:text-2xl leading-snug">
+              E-TBGlobal Trading and Services<br /> Joint Stock Company
+            </p>
+          </div>
+
+          <div class="mt-10 space-y-8">
+            <div class="reveal">
+              <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-2">Head Office</p>
+              <p class="text-neutral-800 leading-relaxed">
+                No. 1/21/111 Giap Bat Street,<br />
+                Giap Bat Ward, Hoang Mai District,<br />
+                Hanoi, Vietnam
+              </p>
+            </div>
+
+            <div class="reveal grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-black/10">
+              <div>
+                <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-2">Phone</p>
+                <a href="tel:+84974751830" class="text-neutral-800 hover:text-ink transition">+84 974 751 830</a>
+              </div>
+              <div>
+                <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-2">Email</p>
+                <a href="mailto:etbgloba168@gmail.com" class="text-neutral-800 hover:text-ink transition break-all">etbgloba168@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PHILIPPINES DISTRIBUTOR ============ -->
+  <section id="distributor" class="py-24 md:py-36 bg-ink text-paper">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+
+      <div class="grid grid-cols-12 gap-8 md:gap-16">
+        <div class="col-span-12 md:col-span-5">
+          <p class="reveal text-[11px] uppercase tracking-widest-xl text-white/50 mb-6">05 — Philippines</p>
+          <h2 class="reveal font-serif text-4xl md:text-5xl leading-[1.08] tracking-tight mb-8">
+            Our exclusive partner<br /> in the Philippines.
+          </h2>
+          <div class="reveal hairline w-12 bg-white/40"></div>
+          <p class="reveal mt-8 text-white/70 leading-relaxed max-w-md">
+            A trusted hand ensures that every bean crossing borders arrives with the same integrity it left with.
+          </p>
+        </div>
+
+        <div class="col-span-12 md:col-span-7">
+          <div class="reveal border border-white/15 p-8 md:p-12">
+            <p class="text-[11px] uppercase tracking-widest-xl text-white/50 mb-4">Official Exclusive Distributor</p>
+            <h3 class="font-serif text-3xl md:text-4xl tracking-tight mb-6">RED TIARA CORP</h3>
+            <p class="text-white/75 leading-relaxed mb-8 max-w-xl">
+              RED TIARA CORP serves as the exclusive distributor of StichedLove Co and E-TBGlobal coffee in the
+              Philippines — overseeing distribution, retail partnerships, and market expansion while protecting
+              product integrity, consistency, and supply continuity from Vietnam to the Philippine market.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-white/15">
+              <div>
+                <p class="text-[11px] uppercase tracking-widest-xl text-white/50 mb-2">Address</p>
+                <p class="text-white/85 leading-relaxed">
+                  Metrowalk Commercial Complex,<br />
+                  Meralco Ave, Pasig City,<br />
+                  Metro Manila
+                </p>
+              </div>
+              <div>
+                <p class="text-[11px] uppercase tracking-widest-xl text-white/50 mb-2">Phone</p>
+                <a href="tel:+639984848869" class="text-white/85 hover:text-white transition">0998 484 8869</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- What We Do -->
+          <div class="reveal mt-10">
+            <p class="text-[11px] uppercase tracking-widest-xl text-white/50 mb-6">What RED TIARA CORP Does</p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-white/85">
+              <li class="flex gap-4 border-b border-white/10 pb-4">
+                <span class="text-white/40">01</span>
+                Exclusive distribution across the Philippines
+              </li>
+              <li class="flex gap-4 border-b border-white/10 pb-4">
+                <span class="text-white/40">02</span>
+                Wholesale and retail channel support
+              </li>
+              <li class="flex gap-4 border-b border-white/10 pb-4">
+                <span class="text-white/40">03</span>
+                Brand development and market expansion
+              </li>
+              <li class="flex gap-4 border-b border-white/10 pb-4">
+                <span class="text-white/40">04</span>
+                Product authenticity and compliance
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-paper text-ink border-t border-black/10">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 py-16">
+      <div class="grid grid-cols-12 gap-8">
+        <div class="col-span-12 md:col-span-5">
+          <a href="#top" class="flex items-center gap-2">
+            <span class="font-serif text-2xl tracking-tight">StichedLove</span>
+            <span class="text-[10px] uppercase tracking-widest-xl text-neutral-500 mt-1">Co</span>
+          </a>
+          <p class="text-neutral-500 text-sm mt-4 max-w-sm leading-relaxed">
+            Premium Vietnamese roasted coffee, crafted for the world.
+          </p>
+        </div>
+
+        <div class="col-span-6 md:col-span-4">
+          <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-3">Legal Entity</p>
+          <p class="text-sm text-neutral-800 leading-relaxed">
+            E-TBGlobal Trading and Services<br /> Joint Stock Company
+          </p>
+        </div>
+
+        <div class="col-span-6 md:col-span-3">
+          <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-3">Contact</p>
+          <a href="mailto:etbgloba168@gmail.com" class="text-sm text-neutral-800 hover:text-ink transition break-all">
+            etbgloba168@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <!-- Payment Information -->
+      <div class="mt-14 pt-8 border-t border-black/10">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full border border-black/15 flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-ink">
+                <rect x="3" y="6" width="18" height="13" rx="1.5" />
+                <path d="M3 10h18" stroke-linecap="round" />
+                <path d="M7 15h3" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-2">Payment Gateway</p>
+              <p class="font-serif text-xl md:text-2xl tracking-tight text-ink">LianLian Gateway Payment</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 md:text-right">
+            <div>
+              <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-2">Account Name</p>
+              <p class="text-sm text-neutral-800 leading-relaxed">
+                E-TB Global Trading Services<br /> Joint Stock Company
+              </p>
+            </div>
+            <div>
+              <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-2">Account Number</p>
+              <p class="text-sm text-neutral-800 font-mono tracking-wide break-all">
+                202502110534611901
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 pt-8 border-t border-black/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-neutral-500">
+        <p>© <span id="year"></span> StichedLove Co. All rights reserved.</p>
+        <p class="max-w-xl md:text-right leading-relaxed">
+          This website serves as the official corporate introduction of E-TBGlobal Trading and Services Joint Stock
+          Company and its premium coffee brand, StichedLove Co.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CONTACT MODAL ============ -->
+  <div id="contactModal" class="modal-backdrop modal-hidden fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-black/60 backdrop-blur-sm">
+    <div class="modal-panel relative w-full max-w-xl bg-paper shadow-2xl max-h-[92vh] overflow-y-auto">
+      <!-- Close button -->
+      <button type="button" data-close-contact aria-label="Close"
+              class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-neutral-500 hover:text-ink transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <div class="p-8 md:p-12">
+        <!-- Header -->
+        <p class="text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-4">Get in touch</p>
+        <h3 class="font-serif text-3xl md:text-4xl leading-[1.1] tracking-tight mb-3">
+          A conversation over coffee.
+        </h3>
+        <p class="text-neutral-600 leading-relaxed mb-8">
+          Tell us a little about your inquiry — we'll be in touch shortly.
+        </p>
+
+        <!-- Form -->
+        <form id="contactForm" class="space-y-6" novalidate>
+          <!-- Name -->
+          <div>
+            <label for="cf-name" class="block text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-2">
+              Full Name <span class="text-ink">*</span>
+            </label>
+            <input type="text" id="cf-name" name="name" required
+                   class="form-field w-full border-b border-neutral-300 bg-transparent py-3 text-base placeholder:text-neutral-400"
+                   placeholder="Your name" />
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <label for="cf-contact" class="block text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-2">
+              Email or Phone <span class="text-ink">*</span>
+            </label>
+            <input type="text" id="cf-contact" name="contact" required
+                   class="form-field w-full border-b border-neutral-300 bg-transparent py-3 text-base placeholder:text-neutral-400"
+                   placeholder="you@email.com  /  +84 ..." />
+          </div>
+
+          <!-- Product interest (optional) -->
+          <div>
+            <label for="cf-product" class="block text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-2">
+              Product of Interest <span class="text-neutral-400 normal-case tracking-normal text-[10px]">(optional)</span>
+            </label>
+            <div class="relative">
+              <select id="cf-product" name="product"
+                      class="form-field w-full appearance-none border-b border-neutral-300 bg-transparent py-3 pr-8 text-base text-neutral-700">
+                <option value="">Select a coffee line</option>
+                <option value="Arabica Coffee Grade 1">Arabica Coffee Grade 1</option>
+                <option value="Robusta Coffee Grade 1">Robusta Coffee Grade 1</option>
+                <option value="Premium Blend Coffee">Premium Blend Coffee</option>
+                <option value="General inquiry">General inquiry</option>
+              </select>
+              <span class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-neutral-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label for="cf-message" class="block text-[11px] uppercase tracking-widest-xl text-neutral-500 mb-2">
+              Message <span class="text-ink">*</span>
+            </label>
+            <textarea id="cf-message" name="message" rows="4" required
+                      class="form-field w-full border-b border-neutral-300 bg-transparent py-3 text-base placeholder:text-neutral-400 resize-none"
+                      placeholder="Tell us about your inquiry..."></textarea>
+          </div>
+
+          <!-- Submit -->
+          <div class="pt-4 flex items-center justify-between gap-4">
+            <button type="button" data-close-contact
+                    class="text-xs uppercase tracking-widest text-neutral-500 hover:text-ink transition">
+              Cancel
+            </button>
+            <button type="submit"
+                    class="inline-flex items-center gap-3 rounded-full bg-ink text-paper px-7 py-4 text-xs uppercase tracking-widest hover:bg-neutral-800 transition">
+              Send Inquiry
+              <span>→</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Success state -->
+        <div id="contactSuccess" class="hidden text-center py-10">
+          <div class="w-14 h-14 mx-auto rounded-full bg-ink text-paper flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h4 class="font-serif text-2xl md:text-3xl tracking-tight mb-3">Thank you.</h4>
+          <p class="text-neutral-600 leading-relaxed max-w-sm mx-auto">
+            Your message has been received. Our team will reach out to you shortly.
+          </p>
+          <button type="button" data-close-contact
+                  class="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b border-ink pb-1">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+    // ===== Contact Modal =====
+    const modal = document.getElementById('contactModal');
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('contactSuccess');
+    const productSelect = document.getElementById('cf-product');
+
+    function openModal(product) {
+      // Reset to form view
+      form.classList.remove('hidden');
+      success.classList.add('hidden');
+      form.reset();
+
+      // Pre-select product if provided
+      if (product) {
+        const option = Array.from(productSelect.options).find(o => o.value === product);
+        if (option) productSelect.value = product;
+      }
+
+      modal.classList.remove('modal-hidden');
+      document.body.style.overflow = 'hidden';
+      // Focus first field for accessibility
+      setTimeout(() => document.getElementById('cf-name')?.focus(), 300);
+    }
+
+    function closeModal() {
+      modal.classList.add('modal-hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Open triggers
+    document.querySelectorAll('[data-open-contact]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        openModal(btn.dataset.product);
+      });
+    });
+
+    // Close triggers
+    document.querySelectorAll('[data-close-contact]').forEach(btn => {
+      btn.addEventListener('click', closeModal);
+    });
+
+    // Click backdrop to close
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // ESC to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('modal-hidden')) closeModal();
+    });
+
+    // Form submit (front-end only — no backend)
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('cf-name').value.trim();
+      const contact = document.getElementById('cf-contact').value.trim();
+      const message = document.getElementById('cf-message').value.trim();
+
+      if (!name || !contact || !message) {
+        // Simple visual hint — highlight empty required fields
+        [['cf-name', name], ['cf-contact', contact], ['cf-message', message]].forEach(([id, val]) => {
+          const el = document.getElementById(id);
+          el.classList.toggle('border-red-500', !val);
+        });
+        return;
+      }
+
+      // In production: POST to a backend / form service here.
+      // e.g. fetch('/api/inquiry', { method: 'POST', body: new FormData(form) })
+
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
+    });
+
+    // Clear red border on input
+    ['cf-name', 'cf-contact', 'cf-message'].forEach(id => {
+      document.getElementById(id).addEventListener('input', (e) => {
+        e.target.classList.remove('border-red-500');
+      });
+    });
+  </script>
+</body>
+</html>
